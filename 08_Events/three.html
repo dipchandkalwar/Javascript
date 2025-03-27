@@ -16,10 +16,26 @@
     // setInterval(function(){
     //     console.log("dipchand");
     // },1000)
+    let set=null;
 
     const sayDate=function(){
         console.log("dipchnad",Date.now());
     }
+   
+
+    document.getElementById('start').addEventListener('click',function(){
+        if(!set){// If set is null (no interval running), start a new one
+
+            set=setInterval(sayDate,1000);
+        }
+    
+    })
+
+    document.getElementById('stop').addEventListener('click',function(){
+        clearInterval(set);
+        // console.log("stipped");
+        set=null;
+    })
 
     
 </script>
